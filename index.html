@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biodata Alinda Putri Devani</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header img {
+      width: 100%;
+      border-bottom: 4px solid #007bff;
+    }
+
+    main {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 30px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    h2 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      margin: 10px 0 20px;
+      border: 1px solid #007bff;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+  </style>
+
+  <script>
+    function simpanData() {
+      let nama = document.getElementById("nama").value;
+      let email = document.getElementById("email").value;
+      let tgl = document.getElementById("tgl").value;
+      let gender = document.getElementById("gender").value;
+      let hobi = document.getElementById("hobi").value;
+
+      let biodata = { nama, email, tgl, gender, hobi };
+      localStorage.setItem("biodata", JSON.stringify(biodata));
+      alert("Data berhasil disimpan!");
+    }
+
+    function muatData() {
+      let biodata = JSON.parse(localStorage.getItem("biodata"));
+      if (biodata) {
+        document.getElementById("nama").value = biodata.nama;
+        document.getElementById("email").value = biodata.email;
+        document.getElementById("tgl").value = biodata.tgl;
+        document.getElementById("gender").value = biodata.gender;
+        document.getElementById("hobi").value = biodata.hobi;
+      }
+    }
+  </script>
+</head>
+
+<body onload="muatData()">
+  <header>
+    <img src="wuyll.png" alt="Header Gambar Biodata" />
+  </header>
+
+  <main>
+    <section>
+      <h2>Informasi Pribadi</h2>
+      <hr>
+      <p><strong>Nama:</strong> Alinda Putri Devani</p>
+      <p><strong>Program Studi:</strong> Sistem Informasi</p>
+      <p><strong>Universitas:</strong> Universitas Internasional Semen Indonesia</p>
+      <p><strong>Email:</strong> alinda.devani23@student.uisi.ac.id</p>
+      <p><strong>Cita-cita:</strong> Menjadi Pengusaha</p>
+    </section>
+
+    <section>
+      <h2>Kegiatan</h2>
+      <hr>
+      <ul>
+        <li>Mengikuti organisasi kampus</li>
+        <li>Menjadi panitia acara kampus</li>
+        <li>Belajar pemrograman</li>
+        <li>Mengikuti seminar dan workshop</li>
+        <li>Berkontribusi dalam proyek sosial</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Portofolio</h2>
+      <hr>
+      <a href="video.html">Video</a><br>
+      <a href="audio.html">Audio</a>
+    </section>
+
+    <section>
+      <h2>Formulir Pendaftaran</h2>
+      <hr>
+      <form action="#" method="post" onsubmit="simpanData(); return false;">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="tgl">Tanggal Lahir:</label>
+        <input type="date" id="tgl" name="tgl">
+
+        <label for="gender">Jenis Kelamin:</label>
+        <select id="gender" name="gender">
+          <option value="pria">Pria</option>
+          <option value="wanita">Wanita</option>
+        </select>
+
+        <label for="hobi">Hobi:</label>
+        <input type="text" id="hobi" name="hobi">
+
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" rows="4" cols="30"></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Kontak / Hubungi Saya</h2>
+      <hr>
+      <p>Jika Anda ingin menghubungi saya, silakan melalui salah satu media berikut:</p>
+      <ul>
+        <li>Email: <a href="mailto:alinda.devani23@student.uisi.ac.id">alinda.devani23@student.uisi.ac.id</a></li>
+        <li>WhatsApp: <a href="https://wa.me/6281918430980" target="_blank">Chat di WhatsApp</a></li>
+        <li>Instagram: <a href="https://instagram.com/alindadevani" target="_blank">@alindadevani</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Alinda Putri Devani</p>
+  </footer>
+</body>
+</html>
